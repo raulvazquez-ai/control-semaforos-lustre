@@ -1,4 +1,4 @@
-# Control de Semáforos mediante Programación Síncrona en Lustre 🚦⏱️
+# Control de Semáforos mediante Programación Síncrona en Lustre 🚦
 
 Este repositorio contiene la especificación, diseño y simulación de un sistema de control de tráfico utilizando **Lustre**, un lenguaje de programación síncrona basado en el flujo de datos, ideal para la verificación de sistemas críticos en tiempo real.
 
