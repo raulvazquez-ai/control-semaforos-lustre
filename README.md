@@ -8,7 +8,7 @@ El proyecto se divide en dos fases de complejidad incremental basadas en la dete
 
 ### 1. Cruce Básico (2 Vías)
 *   **Archivo:** `semaforo.lus`
-*   **Lógica:** Controla un semáforo principal ($S1$) y uno secundario ($S2$)[cite: 20]. El sistema mantiene la vía principal en verde hasta que el `carSensor` detecta un vehículo, activando un ciclo seguro de 8 *ticks* (evaluando el estado previo mediante el operador `pre`) con transiciones en ámbar antes de devolver el flujo a la normalidad.
+*   **Lógica:** Controla un semáforo principal ($S1$) y uno secundario ($S2$). El sistema mantiene la vía principal en verde hasta que el `carSensor` detecta un vehículo, activando un ciclo seguro de 8 *ticks* (evaluando el estado previo mediante el operador `pre`) con transiciones en ámbar antes de devolver el flujo a la normalidad.
 
 ### 2. Intersección Compleja con Prioridades (3 Vías)
 *   **Archivo:** `semaforo2.lus`
