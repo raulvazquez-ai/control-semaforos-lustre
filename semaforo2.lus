@@ -1,0 +1,46 @@
+node SEMAFORO2(carSensor2, carSensor3: bool) 
+returns (verdeS1, verdeS2, verdeS3, 
+         amarilloS1, amarilloS2, amarilloS3, 
+         rojoS1, rojoS2, rojoS3: bool); 
+
+var Fase, preFase, caso, preCaso: int;
+
+let
+    preFase = 0 -> pre(Fase);
+    preCaso = 1 -> pre(caso);
+    
+    caso = if (preFase = 0) then
+              if (carSensor2 and carSensor3) then 4
+              else if carSensor3 then 3
+              else if carSensor2 then 2
+              else 1
+           else preCaso;
+
+    Fase = if (preFase = 0 and caso > 1) then 1
+           else if (caso = 2 or caso = 3) and (preFase < 8) then preFase + 1
+           else if (caso = 4) and (preFase < 14) then preFase + 1
+           else 0;
+
+    verdeS1 = (Fase = 0);
+
+    amarilloS1 = (Fase = 1);
+
+    rojoS1 = (Fase > 1);
+
+    verdeS2 = (caso = 2 and Fase >= 3 and Fase <= 6) or 
+              (caso = 4 and Fase >= 9 and Fase <= 12);
+    
+    amarilloS2 = (caso = 2 and Fase = 7) or 
+                 (caso = 4 and Fase = 13);
+                 
+    rojoS2 = not (verdeS2 or amarilloS2);
+
+    verdeS3 = (caso = 3 and Fase >= 3 and Fase <= 6) or 
+              (caso = 4 and Fase >= 3 and Fase <= 6);
+              
+    amarilloS3 = (caso = 3 and Fase = 7) or 
+                 (caso = 4 and Fase = 7);
+                 
+    rojoS3 = not (verdeS3 or amarilloS3);
+
+tel

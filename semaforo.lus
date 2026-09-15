@@ -1,0 +1,21 @@
+node SEMAFORO(carSensor: bool) returns (verdeS1, verdeS2, amarilloS1, amarilloS2, rojoS1, rojoS2: bool); 
+
+var Fase, preFase: int;
+
+let
+	preFase = 0 -> pre(Fase);
+	Fase = if carSensor and (preFase = 0) then 1
+		else if 0 < preFase and preFase < 8 then preFase + 1
+		     else 0;
+	
+	verdeS1 = Fase = 0;
+	verdeS2 = Fase > 2 and Fase < 7; 
+	
+	amarilloS1 = Fase = 1;
+	amarilloS2 = Fase = 7;
+	 
+	rojoS1 = Fase > 1;
+	rojoS2 = (Fase < 3) or (Fase = 8);
+	
+	
+tel
