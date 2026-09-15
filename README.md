@@ -7,13 +7,13 @@ Este repositorio contiene la especificación, diseño y simulación de un sistem
 El proyecto se divide en dos fases de complejidad incremental basadas en la detección de vehículos mediante sensores paramétricos:
 
 ### 1. Cruce Básico (2 Vías)
-*   **Archivo:** `semaforo.lus`[cite: 21]
+*   **Archivo:** `semaforo.lus`
 *   **Lógica:** Controla un semáforo principal ($S1$) y uno secundario ($S2$)[cite: 20]. El sistema mantiene la vía principal en verde hasta que el `carSensor` detecta un vehículo, activando un ciclo seguro de 8 *ticks* (evaluando el estado previo mediante el operador `pre`) con transiciones en ámbar antes de devolver el flujo a la normalidad.
 
 ### 2. Intersección Compleja con Prioridades (3 Vías)
 *   **Archivo:** `semaforo2.lus`
 *   **Lógica:** Gestiona tres semáforos ($S1$, $S2$, $S3$) en un cruce donde confluyen tres carriles hacia una única dirección. 
-*   **Gestión de Casos:** Implementa un sistema de 14 *ticks* que evalúa 4 estados combinacionales posibles[cite: 20, 22]. El algoritmo otorga prioridad estricta de paso al `carSensor3` sobre el `carSensor2` en caso de concurrencia, garantizando que los ciclos en ejecución no se interrumpan para evitar colisiones.
+*   **Gestión de Casos:** Implementa un sistema de 14 *ticks* que evalúa 4 estados combinacionales posibles. El algoritmo otorga prioridad estricta de paso al `carSensor3` sobre el `carSensor2` en caso de concurrencia, garantizando que los ciclos en ejecución no se interrumpan para evitar colisiones.
 
 ## 🛠️ Tecnologías Utilizadas
 
