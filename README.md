@@ -31,3 +31,11 @@ luciole semaforo.lus SEMAFORO
 
 # Simular la intersección con prioridades (3 vías)
 luciole semaforo2.lus SEMAFORO2
+```
+
+## 📊 Verificación mediante Cronogramas
+
+A continuación se muestra la salida en Sim2Chro que demuestra la correcta resolución concurrente cuando ambos sensores de la intersección compleja se activan simultáneamente (Caso 4):
+
+<img width="812" height="475" alt="dos semaforos" src="https://github.com/user-attachments/assets/0f61b6c9-79ef-4df4-a0b5-9e3038806d82" />
+
