@@ -25,7 +25,7 @@ El proyecto se divide en dos fases de complejidad incremental basadas en la dete
 
 Para visualizar el comportamiento del sistema y probar los diferentes casos lógicos, utiliza las herramientas del entorno de Lustre en tu terminal:
 
-```bash
+``` bash
 # Simular el cruce básico (2 vías)
 luciole semaforo.lus SEMAFORO
 
